@@ -214,23 +214,242 @@
       .field.full { grid-column: auto; }
       .footer-inner { align-items: flex-start; flex-direction: column; }
     }
+    :root {
+      --ink: #1b302c;
+      --muted: #6f7e77;
+      --green: #2e6856;
+      --green-dark: #173d33;
+      --lime: #d7ed9f;
+      --paper: #fafaf6;
+      --line: #e5e9e1;
+    }
+
+    body {
+      background:
+        radial-gradient(ellipse at 82% 13%, rgba(226, 236, 212, .42), transparent 31rem),
+        var(--paper);
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(27, 48, 44, .08);
+      background: rgba(250, 250, 246, .88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .topbar {
+      height: 78px;
+      border-bottom: 0;
+    }
+    .brand { gap: 13px; }
+    .brand-mark {
+      position: relative;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(46, 104, 86, .12);
+      border-radius: 16px;
+      background: linear-gradient(145deg, #e6f4c8 2%, #c4e19a 100%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 5px 14px rgba(37, 74, 57, .1);
+      color: #234e40;
+      font: 800 15px var(--serif);
+      letter-spacing: -.09em;
+    }
+    .brand-mark::after {
+      content: "✦";
+      position: absolute;
+      top: 5px;
+      right: 6px;
+      color: #fff;
+      font: 8px sans-serif;
+    }
+    .brand-name { letter-spacing: .14em; }
+    .brand-sub { letter-spacing: .2em; }
+    .nav { gap: 30px; }
+    .nav a:not(.nav-cta) { transition: color .2s; }
+    .nav-cta, .button {
+      min-height: 48px;
+      padding-inline: 23px;
+      border-radius: 999px;
+      box-shadow: 0 7px 18px rgba(34, 86, 68, .15);
+      transition: background .2s, transform .2s, box-shadow .2s;
+    }
+    .nav-cta { min-height: 43px; }
+    .nav-cta:hover, .button:hover {
+      background: #204f40;
+      box-shadow: 0 10px 24px rgba(34, 86, 68, .22);
+      transform: translateY(-2px);
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 3px solid rgba(117, 155, 91, .55);
+      outline-offset: 3px;
+    }
+    .hero { padding-block: 82px 85px; }
+    .hero-grid { gap: 54px; }
+    h1 {
+      margin-top: 21px;
+      font-size: clamp(40px, 5.2vw, 64px);
+      line-height: 1.28;
+      letter-spacing: -.015em;
+    }
+    h1 em { color: #397b60; }
+    .hero-copy { font-size: 14px; line-height: 2.05; }
+    .hero-note {
+      width: fit-content;
+      padding: 10px 14px;
+      border: 1px solid rgba(46,104,86,.1);
+      border-radius: 999px;
+      background: rgba(255,255,255,.68);
+      font-size: 10px;
+    }
+    .room-art {
+      min-height: 415px;
+      border: 1px solid rgba(46,104,86,.1);
+      border-radius: 42% 42% 30px 30px;
+      background: linear-gradient(155deg, #edf0e3 0%, #dce7d7 100%);
+      box-shadow: 0 24px 60px rgba(39, 68, 51, .1);
+    }
+    .room-art::before { border-color: rgba(47,104,89,.14); }
+    .window { border-radius: 8px; }
+    .sofa { border-radius: 16px 16px 6px 6px; }
+    .sofa::before { border-radius: 12px 12px 4px 4px; }
+    .art-label {
+      left: 18px;
+      bottom: 18px;
+      padding: 14px 18px;
+      border: 1px solid rgba(255,255,255,.75);
+      border-radius: 16px;
+      box-shadow: 0 12px 32px rgba(23,46,42,.12);
+    }
+    .label-icon { border-radius: 12px; }
+    .trust-row {
+      padding: 18px 0;
+      border: 0;
+      background: #f0f3eb;
+    }
+    .trust-item {
+      justify-content: flex-start;
+      padding: 12px 24px;
+      border-right: 1px solid #dfe6dc;
+    }
+    .trust-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: #fff;
+      box-shadow: 0 3px 12px rgba(27,48,44,.05);
+      font-size: 15px;
+    }
+    section.content-section { padding-block: 104px; }
+    .section-heading { margin-bottom: 48px; }
+    h2 { letter-spacing: -.01em; }
+    .service-grid { gap: 20px; }
+    .service-card {
+      min-height: 225px;
+      padding: 30px;
+      border: 1px solid rgba(40, 73, 57, .09);
+      border-radius: 20px;
+      background: linear-gradient(145deg, #fff 0%, #fcfcf8 100%);
+      box-shadow: 0 8px 26px rgba(27,48,44,.035);
+      transition: transform .22s, box-shadow .22s, border-color .22s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(46,104,86,.22);
+      box-shadow: 0 18px 36px rgba(27,48,44,.09);
+    }
+    .service-number { color: #7e9a80; }
+    .service-card h3 { margin-top: 24px; }
+    .area-section {
+      background:
+        radial-gradient(ellipse at 85% 50%, rgba(255,255,255,.65), transparent 35rem),
+        #edf1e9;
+    }
+    .area-card {
+      padding: 34px;
+      border: 1px solid rgba(47,104,89,.12);
+      border-radius: 22px;
+      background: rgba(255,255,255,.8);
+      box-shadow: 0 18px 45px rgba(27,48,44,.07);
+    }
+    .area-list span { border-radius: 999px; background: rgba(255,255,255,.55); }
+    .contact-section {
+      border-radius: 42px 42px 0 0;
+      background:
+        radial-gradient(ellipse at 85% 10%, rgba(78, 119, 90, .28), transparent 34rem),
+        var(--green-dark);
+    }
+    .request-form {
+      padding: 36px;
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: 22px;
+      box-shadow: 0 24px 70px rgba(8, 29, 23, .2);
+    }
+    .field input, .field select, .field textarea {
+      border-radius: 10px;
+      background: #fdfdfa;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--green); }
+    .result { border-radius: 12px; }
+    .result textarea { border-radius: 8px; }
+    .footer { background: #112e27; }
+    .footer .brand-mark {
+      background: linear-gradient(145deg, #e6f4c8 2%, #c4e19a 100%);
+      color: #234e40;
+    }
+    .footer .brand-name { color: #fff; }
+    .footer .brand-sub { color: #a9bbb1; }
+
+    @media (max-width: 760px) {
+      .topbar { height: 70px; }
+      .nav {
+        top: 70px;
+        padding: 12px 18px 18px;
+        border: 1px solid var(--line);
+        border-top: 0;
+        border-radius: 0 0 18px 18px;
+        background: rgba(250,250,246,.98);
+        box-shadow: 0 16px 28px rgba(27,48,44,.1);
+      }
+      .hero { padding-block: 52px 60px; }
+      .hero-grid { gap: 32px; }
+      h1 { font-size: clamp(38px, 10vw, 52px); }
+      .hero-note { align-items: flex-start; border-radius: 14px; line-height: 1.7; }
+      .room-art {
+        min-height: 320px;
+        border-radius: 34% 34% 24px 24px;
+      }
+      .art-label { left: 12px; bottom: 12px; padding: 12px 14px; }
+      .trust-row { padding-block: 12px; }
+      .trust-item { padding: 12px 3px; border-right: 0; border-bottom: 1px solid #dfe6dc; }
+      section.content-section { padding-block: 72px; }
+      .service-grid { gap: 13px; }
+      .service-card { padding: 23px; border-radius: 17px; }
+      .area-card { padding: 25px; border-radius: 18px; }
+      .contact-section { border-radius: 28px 28px 0 0; }
+      .request-form { padding: 23px 18px; border-radius: 18px; }
+    }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
     }
   </style>
 </head>
 <body>
-  <header class="wrap topbar">
-    <a class="brand" href="#top" aria-label="LD CLEANING ホーム">
-      <span class="brand-mark">LD</span>
-      <span class="brand-name">LD CLEANING<span class="brand-sub">ROOM CLEANING SERVICE</span></span>
-    </a>
-    <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-nav">☰</button>
-    <nav class="nav" id="site-nav" aria-label="メインナビゲーション">
-      <a href="#service">サービス</a>
-      <a href="#area">対応エリア</a>
-      <a href="#contact" class="nav-cta">お見積もり相談 <span aria-hidden="true">↗</span></a>
-    </nav>
+  <header class="site-header">
+    <div class="wrap topbar">
+      <a class="brand" href="#top" aria-label="LD CLEANING ホーム">
+        <span class="brand-mark">LD</span>
+        <span class="brand-name">LD CLEANING<span class="brand-sub">ROOM CLEANING SERVICE</span></span>
+      </a>
+      <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <nav class="nav" id="site-nav" aria-label="メインナビゲーション">
+        <a href="#service">サービス</a>
+        <a href="#area">対応エリア</a>
+        <a href="#contact" class="nav-cta">お見積もり相談 <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
   </header>
 
   <main id="top">
